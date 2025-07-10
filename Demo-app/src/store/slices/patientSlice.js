@@ -110,7 +110,7 @@ const patientSlice = createSlice({
     },
     deletePatientSuccess: (state, action) => {
       state.deleteLoading = false;
-      state.patients = state.patients.filter(p => p.id !== action.payload);
+      state.patients = state.patients?.filter(p => p.id !== action.payload);
       state.totalPatients -= 1;
       if (state.currentPatient && state.currentPatient.id === action.payload) {
         state.currentPatient = null;

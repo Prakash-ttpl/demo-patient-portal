@@ -9,51 +9,7 @@ import {
   setToken,
   setUser
 } from '../slices/authSlice';
-
-// Mock API functions (replace with actual API calls)
-const authAPI = {
-  register: async (userData) => {
-    // Simulate API call
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (userData.email && userData.password) {
-          resolve({
-            access_token: 'mock-jwt-token-' + Date.now(),
-            user: {
-              id: 'user-' + Date.now(),
-              email: userData.email,
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString()
-            }
-          });
-        } else {
-          reject(new Error('Invalid registration data'));
-        }
-      }, 1000);
-    });
-  },
-
-  login: async (credentials) => {
-    // Simulate API call
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (credentials.email === 'test@example.com' && credentials.password === 'password123') {
-          resolve({
-            access_token: 'mock-jwt-token-' + Date.now(),
-            user: {
-              id: 'user-' + Date.now(),
-              email: credentials.email,
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString()
-            }
-          });
-        } else {
-          reject(new Error('Invalid credentials'));
-        }
-      }, 1000);
-    });
-  }
-};
+import api from '../../services/api';
 
 // Helper function to save token to localStorage
 const saveTokenToStorage = (token) => {
@@ -79,30 +35,44 @@ const getUserFromStorage = () => {
 // Register saga
 function* registerUser(action) {
   try {
-    const response = yield call(authAPI.register, action.payload);
-    
-    // Save to localStorage
-    saveTokenToStorage(response.access_token);
-    saveUserToStorage(response.user);
-    
-    yield put(registerSuccess(response));
+    const response = yield call(() =>
+      api.post('/auth/register', action.payload)
+    );
+    const { access_token, user } = response.data;
+    localStorage.setItem('health_first_token', access_token);
+    localStorage.setItem('health_first_user', JSON.stringify(user));
+    yield put(registerSuccess({ access_token, user }));
   } catch (error) {
-    yield put(registerFailure(error.message));
+    let message = 'Registration failed';
+    if (error.response) {
+      if (error.response.status === 400) {
+        message = error.response.data.message || 'Validation error';
+      }
+    }
+    yield put(registerFailure(message));
   }
 }
 
 // Login saga
 function* loginUser(action) {
   try {
-    const response = yield call(authAPI.login, action.payload);
-    
-    // Save to localStorage
-    saveTokenToStorage(response.access_token);
-    saveUserToStorage(response.user);
-    
-    yield put(loginSuccess(response));
+    const response = yield call(() =>
+      api.post('/auth/login', action.payload)
+    );
+    const { access_token, user } = response.data;
+    localStorage.setItem('health_first_token', access_token);
+    localStorage.setItem('health_first_user', JSON.stringify(user));
+    yield put(loginSuccess({ access_token, user }));
   } catch (error) {
-    yield put(loginFailure(error.message));
+    let message = 'Login failed';
+    if (error.response) {
+      if (error.response.status === 401) {
+        message = 'Invalid credentials';
+      } else if (error.response.status === 400) {
+        message = error.response.data.message || 'Validation error';
+      }
+    }
+    yield put(loginFailure(message));
   }
 }
 

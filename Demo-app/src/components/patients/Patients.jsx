@@ -90,10 +90,10 @@ const Patients = () => {
   const [showModal, setShowModal] = useState(false);
 
   // Filtered patients (UI only)
-  const filteredPatients = patients.filter(p =>
+  const filteredPatients = Array.isArray(patients) ? patients?.filter(p =>
     p.firstName.toLowerCase().includes(search.toLowerCase()) ||
     p.lastName.toLowerCase().includes(search.toLowerCase())
-  );
+  ) : [];
 
   return (
     <div className="p-6">
@@ -122,12 +122,12 @@ const Patients = () => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {filteredPatients.length === 0 ? (
+            {Array.isArray(filteredPatients) && filteredPatients.length === 0 ? (
               <tr>
                 <td colSpan={5} className="px-6 py-4 text-center text-gray-400">No patients found.</td>
               </tr>
             ) : (
-              filteredPatients.map(patient => (
+              Array.isArray(filteredPatients) && filteredPatients.map(patient => (
                 <tr key={patient.id}>
                   <td className="px-6 py-4 whitespace-nowrap">{patient.firstName} {patient.lastName}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{patient.dateOfBirth}</td>
