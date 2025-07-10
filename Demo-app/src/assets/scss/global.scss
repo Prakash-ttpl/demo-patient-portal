@@ -1,0 +1,476 @@
+$roboto-normal: 'Roboto', sans-serif !important;
+$font-weight-normal: normal !important;
+$font-weight-medium: 600 !important;
+$box-shadow: #00000029 !important;
+$cyan-blue: #1b5984 !important;
+$grey-50 : #F9FAFB !important;
+$dark-grey : #2E2E2E !important;
+$text-neutral-80 : #21282B !important;
+$text-primary : #484848 !important;
+$light-grey : #ECECEC !important;
+$subtle-grey : #E8E8E8 !important;
+$neutral-20: #E9E9E9 !important;
+$neutral-70 : #565656 !important;
+$grey-800 : #2E2E2E !important;
+
+$text-sozen-primary :#187CBC !important;
+$neutral-60 : #727272 !important;
+$neutral-01 : #FAFAFA !important;
+$neutral-90 : #1D1D1D !important;
+$neutral-80 : #393939 !important;
+$grey-50:#F9FAFB !important;
+$grey-75: #F5F6F8 !important;
+$grey-100 :#F2F4F7 !important;
+$neutral-dark-grey : #323232 !important;
+$rgba-eaeaea:#EAEAEA !important;
+
+
+$primary-50 : #187CBC !important;
+$primary-70 : #145078 !important;
+$primary-10 : #C1E1F6 !important;
+$neutral-50 : #979797 !important;
+$solid-white : #FFFFFF !important;
+$secondary-gray:#A0A0A0 !important;
+$tertiary-gray: #D5D5D5 !important;
+$neutral-05: #F8F8F8 !important;
+
+.page-content {
+    padding: calc(30px + 1.5rem) calc(1.5rem / 2) 60px calc(1.5rem / 2);
+}
+
+.login-layout {
+
+}
+
+
+.bg-solid-white{
+    background-color: $solid-white;
+}
+
+.bg-primary-50{
+    background-color: $primary-50;
+}
+
+.bg-neutral-05{
+    background-color: $neutral-05;
+}
+
+
+.border-neutral-dark-grey{
+    border: 1px solid $neutral-dark-grey;
+}
+
+.text-neutral-dark-grey{
+    color:$neutral-dark-grey;
+}
+
+.bg-subtle-grey {
+    background-color: $subtle-grey;
+}
+
+.bg-rgba-eaeaea{
+    background-color: $rgba-eaeaea;
+}
+
+.text-primary-50{
+    color: $primary-50;
+}
+
+
+@media (min-width: 1080px) {
+  .login-layout {
+    @apply flex-row;
+  }
+}
+
+.border-neutral-20{
+border-color: $neutral-20;
+}
+
+.bg-grey-50{
+    background-color: $grey-50;
+}
+
+.border-grey-100 { 
+    border: 1px solid $grey-100;
+}
+
+.text-primary-50{
+    color:$primary-50;
+}
+
+.bg-primary-50{
+    background-color: $primary-50;
+}
+
+.background-primary-10{
+    background-color: $primary-10;
+}
+
+.border-primary-70{
+    border : 1px solid $primary-70;
+}
+
+.text-neutral-50{
+    color:$neutral-50;
+}
+.bg-neutral-50{
+    background-color: $neutral-50;
+}
+
+.bg-neutral-01 {
+    background-color: $neutral-01;
+}
+
+.text-neutral-90{
+    color:$neutral-90;
+}
+
+.text-neutral-60 {
+    color : $neutral-60;
+}
+
+.bg-neutral-20{
+    background-color: $neutral-20;
+}
+
+.border-neutral-20 {
+    border: 1px solid $neutral-20;
+}
+
+.bg-sozen-primary {
+    background-color: $text-sozen-primary;
+}
+
+.sozen-text-primary {
+    color : $text-sozen-primary;
+}
+
+.border-solid-white{
+    border: 1px solid $solid-white;
+}
+
+.text-neutral-70{
+    color : $neutral-70;
+}
+
+.grey-800 {
+    color:$grey-800;
+}
+
+.text-neutral-80 {
+  color: $neutral-80;
+}
+
+.text-primary {
+    color:$text-primary;
+}
+
+
+.line-height-120{
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+@media (max-width: 667px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+@media print {
+    .break-inside-avoid {
+        break-inside: avoid;
+    }
+    .page-break-before-auto {
+        page-break-before: auto;
+    }
+    .page-break-after-auto {
+        page-break-after: auto;
+    }
+}
+
+.p-0 {
+    padding: 0px !important;
+}
+
+.m-0 {
+    margin: 0px !important;
+}
+
+.width-30-px {
+    width: 30px !important;
+}
+
+.width-50 {
+    width: 50% !important;
+}
+
+.width-48 {
+    width: 48% !important;
+}
+
+.width-30 {
+    width: 30% !important;
+}
+
+.width-40 {
+    width: 40% !important;
+}
+
+.height-30-px {
+    height: 30px !important;
+}
+
+.fs-8 {
+    font-size: 8px !important;
+}
+
+.fs-10 {
+    font-size: 10px !important;
+}
+
+.fs-12 {
+    font-size: 12px !important;
+}
+
+.fs-14 {
+    font-size: 14px !important;
+}
+
+.fs-16 {
+    font-size: 16px !important;
+}
+
+.fs-18 {
+    font-size: 18px !important;
+}
+
+.fs-20 {
+    font-size: 20px !important;
+}
+
+.fs-24{
+    font-size : 24px !important;
+}
+
+.column-gap-10px {
+    column-gap: 10px;
+}
+
+.col-gap-5 {
+    column-gap: 5px !important;
+}
+
+
+.column-gap-16 {
+    column-gap: 16px;
+}
+
+.column-gap-20px {
+    column-gap: 20px;
+}
+
+.column-gap-40px {
+    column-gap: 40px;
+}
+.row-gap-5 {
+    row-gap: 5px;
+}
+.row-gap-10 {
+    row-gap: 10px;
+}
+
+.row-gap-15 {
+    row-gap: 15px;
+}
+
+.row-gap-16 {
+    row-gap: 16px;
+}
+
+.row-gap-20 {
+    row-gap: 16px;
+}
+
+.row-gap-30 {
+    row-gap: 30px;
+}
+
+.flex-2 {
+    flex: 2 !important;
+}
+
+.flex-3 {
+    flex: 3 !important;
+}
+
+.min-w-410 {
+    min-width: 410px;
+}
+
+.max-w-430 {
+    max-width: 430px;
+}
+
+.max-w-450 {
+    max-width: 450px;
+}
+
+.max-w-440 {
+    max-width: 440px;
+}
+
+.box-shadow-1 {
+    box-shadow: 0px 0px 6px $box-shadow;
+}
+
+.p-7px {
+    padding: 7px !important;
+}
+
+.pl-30px {
+    padding-left: 30px !important;
+}
+
+.max-h-637 {
+    max-height: 637px;
+}
+
+.max-h-568 {
+    max-height: 568px;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.flex-basis-50-10 {
+    flex-basis: calc(50% - 10px);
+}
+
+.max-w-586 {
+    max-width: 586px;
+}
+
+.max-w-398 {
+    max-width: 398px;
+}
+
+.min-w-400 {
+    min-width: 400px;
+}
+.h-auto {
+    height: auto;
+}
+
+.min-w-500 {
+    min-width: 500px;
+}
+.max-h-385 {
+    max-height: 385px;
+}
+
+.max-w-600 {
+    max-width: 600px;
+}
+
+.min-w-515 {
+    min-width: 515px;
+}
+
+.min-width-max-content {
+    min-width: max-content;
+}
+
+.max-width-max-content {
+    max-width: max-content;
+}
+
+.error-text {
+    @apply text-red-400;
+    
+}
+
+.sozen-text-editor .quill {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+}
+.sozen-text-editor .ql-container {
+    height: 120px;
+    border: none !important;
+}
+.ql-toolbar {
+    order: 2;
+    border: none !important;
+    box-shadow: 0px 0px 6px $box-shadow;
+    width: 70%;
+    margin-left: auto;
+}
+
+.react-datepicker__year-select::-webkit-scrollbar, .react-datepicker__time-list::-webkit-scrollbar {
+    width: 5px;
+    height: 10px !important;
+}
+
+.react-datepicker__year-select::-webkit-scrollbar-thumb , .react-datepicker__time-list::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.react-datepicker__year-select::-webkit-scrollbar-track , .react-datepicker__time-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid $cyan-blue;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  #scheduling-date-picker .react-datepicker{
+    border: none !important;
+    box-shadow: 0px 0px 6px $box-shadow;
+  }
+    
+  #scheduling-date-picker .react-datepicker-popper{
+    position: relative !important;
+    transform: translate(0px, 10px) !important;
+  }
+  #scheduling-date-picker .react-datepicker__triangle{
+    display: none !important;
+  }
+
+  .availability-custom-header .react-datepicker-popper{
+    z-index: 100 !important;
+  }
